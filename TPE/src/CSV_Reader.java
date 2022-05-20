@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CsvReader {
+public class CSV_Reader {
 
     public static void main(String[] args) {
 
@@ -14,7 +14,7 @@ public class CsvReader {
         String cvsSplitBy = ",";
 
 
-        BSIndexTree<String> BSTree = new BSIndexTree<>(null);  //Árbol de búsqueda por género...
+        BSIndexTree<String> genresTree = new BSIndexTree<>(null);  //Árbol de búsqueda por género...
         ArrayList<String> genresIndex = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -33,12 +33,12 @@ public class CsvReader {
 
                 //3.Inicializa el árbol de búsqueda con los géneros y los indexa en un array...
                 for (String genre: genres) {
-                    BSTree.insert(genre);
+                    genresTree.insert(genre);
                     if(!genresIndex.contains(genre)) genresIndex.add(genre);
                 }
 
                 //4. Agrega el libro al árbol de búsqueda...
-                BSTree.addBook(genres, aux);
+                genresTree.addBook(genres, aux);
 
                 // ---------------------------------------------
 
@@ -50,7 +50,7 @@ public class CsvReader {
 
         /*---------------------------- OUTS ------------------------------------------*/
         System.out.println("Árbol (Pre-order: ");
-        BSTree.preOrderPrint();
+        genresTree.preOrderPrint();
 
         System.out.println(" ");
         System.out.println(" ");
@@ -67,9 +67,9 @@ public class CsvReader {
 
 
         /*---- filter  ----*/
-        String filter = genresIndex.get(12);
+        String filter = genresIndex.get(1);
 
-        List<Book> filtrados = BSTree.getBooksByGenre(filter);
+        List<Book> filtrados = genresTree.getBooksByGenre(filter);
         if(filtrados.isEmpty()) {
             System.out.println("Your search had no results");
         } else {
