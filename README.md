@@ -3,7 +3,7 @@
 Authors: Diego Dutka  |  Guillermina Lauge
 
 ### Description
-The project constains a library index proposal in order to analyse data structures and search algorithms efficiency
+The project constains a library index proposal in order to analyse data structures and search algorithms -Greedy, Backtracking- efficiency
 
 
 
