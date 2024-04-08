@@ -1,10 +1,12 @@
 # Library Index 
 
+Authors: Diego Dutka  |  Guillermina Lauge
 
+### Description
 The project constains a library index proposal in order to analyse data structures and search algorithms efficiency
 
 
-Contributors: Diego Dutka  |  Guillermina Lauge
+
 
 
 
